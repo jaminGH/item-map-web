@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>平台设置</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; margin: 24px; }
+    .container { max-width: 780px; margin: 0 auto; }
+    h1 { font-size: 20px; margin-bottom: 16px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border-bottom: 1px solid #eee; padding: 8px 6px; text-align: left; }
+    .nav { margin-bottom: 12px; }
+    a { color: #0d6efd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="/">首页</a> ·
+      <a href="/admin">管理面板</a> ·
+      <a href="/logout">退出登录</a>
+    </div>
+    <h1>平台设置</h1>
+    <table>
+      <tbody>
+        <tr><th>BASE_DATA_DIR</th><td>{{ info.BASE_DATA_DIR }}</td></tr>
+        <tr><th>UPLOAD_DIR</th><td>{{ info.UPLOAD_DIR }}</td></tr>
+        <tr><th>OUTPUT_DIR</th><td>{{ info.OUTPUT_DIR }}</td></tr>
+        <tr><th>PORT</th><td>{{ info.PORT }}</td></tr>
+        <tr><th>ADMIN_ENABLED</th><td>{{ '是' if info.ADMIN_ENABLED else '否' }}</td></tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

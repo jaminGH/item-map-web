@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  item-map-web:
+    build: .
+    container_name: item-map-web
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_SECRET_KEY=${FLASK_SECRET_KEY:-change-me}
+      - ITEMMAP_DATA_DIR=/app/data
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
